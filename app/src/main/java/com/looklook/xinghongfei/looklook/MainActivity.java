@@ -124,20 +124,17 @@ public class MainActivity extends BaseActivity implements IMain {
             } else {
                 switchFragment(new ZhihuFragment(), " ");
                 currentMenuItem = navView.getMenu().findItem(R.id.zhihuitem);
-
             }
         }
 
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                if(currentMenuItem!=null&&item.getItemId()==R.id.menu_about)
-                {
-                    Intent intent = new Intent(getApplication(), AboutActivity.class);
-                    getApplication().startActivity(intent);
+                if (currentMenuItem != null && item.getItemId() == R.id.menu_about) {
+                    Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+                    startActivity(intent);
                     return true;
                 }
-
 
                 if (currentMenuItem != item && currentMenuItem != null) {
                     currentMenuItem.setChecked(false);
@@ -245,7 +242,6 @@ public class MainActivity extends BaseActivity implements IMain {
             case R.id.meiziitem:
                 fragment = new MeiziFragment();
                 break;
-
         }
         return fragment;
     }

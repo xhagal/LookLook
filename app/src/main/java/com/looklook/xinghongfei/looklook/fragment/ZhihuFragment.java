@@ -13,6 +13,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -222,7 +223,7 @@ public class ZhihuFragment extends BaseFragment implements IZhihuFragment {
 
     @Override
     public void showError(String error) {
-
+        Log.e("xhagal", "showError: " + error);
         if (recycle != null) {
             Snackbar.make(recycle, getString(R.string.snack_infor), Snackbar.LENGTH_SHORT).setAction("重试", new View.OnClickListener() {
                 @Override
